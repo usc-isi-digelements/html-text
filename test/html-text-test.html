@@ -1,0 +1,40 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+  <script src="../../web-component-tester/browser.js"></script>
+  <link rel="import" href="../html-text.html">
+</head>
+
+<body>
+  <test-fixture id="html-text-fixture">
+    <template>
+      <html-text></html-text>
+    </template>
+  </test-fixture>
+
+  <script>
+    suite('html-text tests', function() {
+      var component;
+
+      setup(function(done) {
+        component = fixture('html-text-fixture');
+        component.html = "<h1>Title</h1><p>Paragraph</p>";
+        flush(function() {
+          done();
+        });
+      });
+
+      test('html does equal input value', function() {
+        expect(component.html).to.equal('<h1>Title</h1><p>Paragraph</p>');
+      });
+
+      test('inner html of html element does equal input value', function() {
+        expect(component.$$('#html')).to.exist;
+        expect(component.$$('#html').innerHTML).to.equal('<h1>Title</h1><p>Paragraph</p>');
+      });
+    });
+  </script>
+</body>
+</html>

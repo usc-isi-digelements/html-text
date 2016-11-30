@@ -1,0 +1,56 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+A polymer web component that shows text with raw HTML.
+
+Example:
+
+    <html-text
+        html="<h1>Title</h1><p>Paragraph</p>">
+    </html-text>
+
+@demo demo/index.html
+-->
+
+<dom-module id="html-text">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+
+    <div id="html">[[html]]</div>
+  </template>
+
+  <script>
+  (function() {
+    'use strict';
+
+    Polymer({
+      is: 'html-text',
+
+      properties: {
+        /**
+         * The HTML to show.
+         * @type {String}
+         */
+        html: {
+          type: String,
+          value: '',
+          observer: '_updateHtml'
+        }
+      },
+
+      /**
+       * Sets the HTML in the div element to the value of the "html" property.
+       * @private
+       */
+      _updateHtml: function() {
+        // Must set the inner HTML to the HTML property or else polymer will clean its tags.
+        this.$$('#html').innerHTML = this.html;
+      }
+    });
+  })();
+  </script>
+</dom-module>
