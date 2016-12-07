@@ -1,6 +1,6 @@
 # html-text
 
-A polymer web component that shows text with raw HTML.
+A Polymer Element showing text with raw HTML.
 
 ### Example
 ```html

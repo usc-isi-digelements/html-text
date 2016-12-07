@@ -1,9 +1,9 @@
 <link rel="import" href="../polymer/polymer.html">
 
 <!--
-A polymer web component that shows text with raw HTML.
+A Polymer Element showing text with raw HTML.
 
-Example:
+### Example
 
     <html-text
         html="<h1>Title</h1><p>Paragraph</p>">
@@ -33,6 +33,7 @@ Example:
       properties: {
         /**
          * The HTML to show.
+         *
          * @type {String}
          */
         html: {
@@ -44,6 +45,7 @@ Example:
 
       /**
        * Sets the HTML in the div element to the value of the "html" property.
+       *
        * @private
        */
       _updateHtml: function() {

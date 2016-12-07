@@ -16,23 +16,23 @@
 
   <script>
     suite('html-text tests', function() {
-      var component;
+      var element;
 
       setup(function(done) {
-        component = fixture('html-text-fixture');
-        component.html = "<h1>Title</h1><p>Paragraph</p>";
+        element = fixture('html-text-fixture');
+        element.html = "<h1>Title</h1><p>Paragraph</p>";
         flush(function() {
           done();
         });
       });
 
       test('html does equal input value', function() {
-        expect(component.html).to.equal('<h1>Title</h1><p>Paragraph</p>');
+        expect(element.html).to.equal('<h1>Title</h1><p>Paragraph</p>');
       });
 
       test('inner html of html element does equal input value', function() {
-        expect(component.$$('#html')).to.exist;
-        expect(component.$$('#html').innerHTML).to.equal('<h1>Title</h1><p>Paragraph</p>');
+        expect(element.$$('#html')).to.exist;
+        expect(element.$$('#html').innerHTML).to.equal('<h1>Title</h1><p>Paragraph</p>');
       });
     });
   </script>
