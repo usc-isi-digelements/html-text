@@ -18,21 +18,23 @@ limitations under the License.
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
-  <script src="../../webcomponentsjs/webcomponents-lite.min.js"></script>
+  <script src="../../webcomponentsjs/webcomponents-loader.js"></script>
   <link rel="import" href="../html-text.html">
 </head>
 
 <body unresolved>
-  <template is="dom-bind" id="demo">
-    <p>html (replacing square brackets with angle brackets):</p>
+  <dom-bind id="demo">
+    <template is="dom-bind">
+      <p>html (replacing square brackets with angle brackets):</p>
 
-    <p>[h1]Title[/h1][p]Paragraph[/p]</p>
+      <p>[h1]Title[/h1][p]Paragraph[/p]</p>
 
-    <p>html-text:</p>
+      <p>html-text:</p>
 
-    <html-text
-      html="<h1>Title</h1><p>Paragraph</p>">
-    </html-text>
-  </template>
+      <html-text
+        html="<h1>Title</h1><p>Paragraph</p>">
+      </html-text>
+    </template>
+  </dom-bind>
 </body>
 </html>
